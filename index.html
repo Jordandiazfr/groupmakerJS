@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Group divisor</h1>
+    <p>Use this form to divide students into a certain amount of groups</p>
+    <form action="" method="POST">
+      <label for="names">First student name</label>
+      <input type="text" name="names" id="" />
+      <button class="add" type="submit" name="add">ADD STUDENT</button>
+      <button class="load" type="submit">LOAD THE LIST OF BEFORE</button>
+
+      <br />
+      <br />
+      <!-- student list -->
+      <label for="list">List of students</label>
+      <div class="list" name="list" contenteditable="true"></div>
+      <br />
+      <br />
+      <!-- group distribution -->
+      <label for="numStudents"> How many students per group?</label>
+      <input type="text" name="numStudents" id="" />
+      <button type="submit" class="makeGroups">Make groups</button>
+      <hr />
+      <h3>Group of students</h3>
+      <div class="finalGroup" contenteditable="true"></div>
+    </form>
+    <script src="/script.js"></script>
+  </body>
+</html>
