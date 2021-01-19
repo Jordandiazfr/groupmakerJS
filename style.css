@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+@keyframes animateElement {
+  0% {
+    opacity: 0;
+    transform: scaleY(0) translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1) translateY(0%);
+  }
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  width: 100%;
+  font-size: 80%;
+  background-color: #ffc404;
+}
+form {
+  margin: 1rem 0.5rem 0.5rem 0;
+  flex: auto;
+  flex-direction: column;
+  word-wrap: normal;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.wrapper {
+  background-color: #f7f7f7;
+  padding: 1rem;
+  margin: auto;
+  max-width: 70%;
+  display: flexbox;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.2rem;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+h2 {
+  color: #2196f3;
+  font-weight: 900;
+}
+input {
+  display: flex;
+  width: 80%;
+  margin: 1rem auto;
+  background-color: inherit;
+  padding: 0.2rem;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+input:focus {
+  outline: none;
+}
+
+label {
+  color: #999;
+  display: flex;
+  flex: 1 100%;
+  font-weight: normal;
+  pointer-events: none;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 1rem;
+}
+
+button {
+  font-family: "Roboto";
+  padding: 0.5rem 2em;
+  margin: 0.5rem;
+  border: 0;
+  outline: 0;
+  color: white;
+  background-color: #2196f3;
+  text-transform: uppercase;
+  border-radius: 0.15em;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.list {
+  margin-top: 2rem;
+  display: flex;
+  padding: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.student {
+  background-color: aliceblue;
+  border-radius: 0.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5rem;
+  animation: animateElement linear 0.3s;
+  animation-iteration-count: 1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.student p {
+  align-items: center;
+  padding: 0 1rem 0 1rem;
+}
+
+.name-list {
+  background-color: aliceblue;
+}
+#groups-total {
+  display: flex;
+  margin: 1rem 5rem;
+  padding: 1rem;
+  max-width: 100%;
+  flex-direction: row;
+  justify-items: center;
+  justify-content: space-evenly;
+}
+.number {
+  flex: 1 100%;
+  margin: 0 2rem 0 0;
+  text-align: center;
+}
+.groups-result {
+  flex-direction: row;
+  flex: 1 100%;
+}
+.finalGroup {
+  flex-direction: row;
+  flex: 1 100%;
+}
+
+.grouptitle {
+  color: #2196f3;
+  font-weight: 600;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  bottom: 0;
+  left: 50%;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 700px) {
+  body {
+    font-size: 80%;
+  }
+  .wrapper {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 2000px) {
+  .wrapper {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .wrapper {
+    margin: 1rem auto;
+    max-width: 80%;
+    padding: 0rem;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  h2 {
+    margin: 0;
+    padding: 0.5rem;
+  }
+  p {
+    margin: 0;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  form {
+    margin: 0;
+    padding: 0;
+  }
+  label {
+    margin: 0;
+    padding: 1rem;
+    text-align: justify;
+  }
+  input {
+    display: flex;
+    width: 80%;
+  }
+  .student {
+    padding: 1rem;
+  }
+  .number {
+    display: flexbox;
+    margin: 0;
+  }
+}
