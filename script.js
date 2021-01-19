@@ -1,6 +1,7 @@
 function $(selector) {
   return document.querySelector(selector);
 }
+
 let studentList = $(".list");
 let btnLoad = $(".load");
 let nameStudent = $("input[name='names']");
@@ -16,11 +17,6 @@ nameStudent.addEventListener("click", (e) => {
   nameStudent.value = "";
 });
 
-function clean() {
-  simplon = [];
-  nameStudent.value = "";
-  numStudents.value = "";
-}
 // Manipulate the dom
 function createDOM(what, how, where) {
   let myDiv = document.createElement("div");
@@ -44,7 +40,6 @@ document.querySelector(".add").addEventListener("click", (e) => {
     nameStudent.value = "";
   } else {
     createDOM(nameStudent.value, "student", studentList);
-    remove();
     simplon.push(nameStudent.value);
     localStorage.setItem("simplon", simplon);
     nameStudent.value = "";
@@ -84,6 +79,16 @@ function createPrintGroups() {
     );
   }
 }
+//////////// CREATE GROUPS BUTTON 2 , 3 , 4  //////////
+let buttons = document.querySelectorAll(".fastGroup");
+for (const button of buttons) {
+  console.log(button);
+  button.addEventListener("click", (e) => {
+    numStudents.value = e.target.value;
+    createPrintGroups();
+  });
+}
+
 // LOAD THE LOCAL STORAGED LIST
 btnLoad.addEventListener("click", (e) => {
   e.preventDefault();
@@ -95,6 +100,13 @@ btnLoad.addEventListener("click", (e) => {
     }
   }
   console.log(simplon);
+});
+
+// clean the form
+$(".clean").addEventListener("click", (e) => {
+  simplon = [];
+  nameStudent.value = "";
+  numStudents.value = "";
 });
 
 // ------------------------- Logic -----------------------------
@@ -128,15 +140,3 @@ const makeGroups = (maxNum) => {
   console.log(allGroups);
   return allGroups;
 };
-
-//////////// Visual Effects //////////
-let buttons = document.querySelectorAll(".fastGroup");
-
-console.log(buttons);
-
-for (const button of buttons) {
-  console.log(button);
-  button.addEventListener("click", (e) => {
-    console.log(e.target.value);
-  });
-}
