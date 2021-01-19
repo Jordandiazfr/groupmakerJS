@@ -17,7 +17,7 @@ body {
   font-size: 80%;
   background-color: #ffc404;
 }
-form {
+#form {
   margin: 1rem 0.5rem 0.5rem 0;
   flex: auto;
   flex-direction: column;
@@ -155,7 +155,7 @@ footer {
   margin-top: 2rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   body {
     font-size: 80%;
   }
@@ -166,7 +166,7 @@ footer {
 
 @media (max-width: 2000px) {
   .wrapper {
-    max-width: 70%;
+    max-width: 50%;
   }
 }
 

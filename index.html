@@ -10,7 +10,7 @@
     <div class="wrapper">
       <h2>Group divisor</h2>
       <p>Use this form to divide students into a certain amount of groups</p>
-      <form>
+      <section id="form">
         <label for="names">First student name</label>
         <input type="text" name="names" class="names" />
         <button class="add" type="submit" name="add">ADD STUDENT</button>
@@ -32,17 +32,17 @@
             placeholder="Specify your number "
             min="0"
           />
-          <button type="submit" class="fastGroup" value="2">2</button>
-          <button type="submit" class="fastGroup" value="3">3</button>
-          <button type="submit" class="fastGroup" value="4">4</button>
-          <button type="submit" class="makeGroups">Make groups</button>
+          <button class="fastGroup" value="2">2</button>
+          <button class="fastGroup" value="3">3</button>
+          <button class="fastGroup" value="4">4</button>
+          <button class="makeGroups">Make groups</button>
         </div>
         <!--  Group result -->
         <div class="groups-result">
           <h3>Group of students haha</h3>
           <div class="finalGroup"></div>
         </div>
-      </form>
+      </section>
     </div>
 
     <script src="/script.js"></script>

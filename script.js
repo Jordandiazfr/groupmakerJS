@@ -1,7 +1,6 @@
 function $(selector) {
   return document.querySelector(selector);
 }
-
 let studentList = $(".list");
 let btnLoad = $(".load");
 let nameStudent = $("input[name='names']");
@@ -31,7 +30,11 @@ function createDOM(what, how, where) {
   where.appendChild(myDiv);
   myDiv.appendChild(myP);
 }
-
+function remove() {
+  $$(".student").addEventListener("click", (e) => {
+    console.log(e.target.value);
+  });
+}
 // Add the student to the selected div and  also to an array
 document.querySelector(".add").addEventListener("click", (e) => {
   e.preventDefault();
@@ -41,6 +44,7 @@ document.querySelector(".add").addEventListener("click", (e) => {
     nameStudent.value = "";
   } else {
     createDOM(nameStudent.value, "student", studentList);
+    remove();
     simplon.push(nameStudent.value);
     localStorage.setItem("simplon", simplon);
     nameStudent.value = "";
@@ -56,6 +60,10 @@ numStudents.addEventListener("input", (e) => {
 
 document.querySelector(".makeGroups").addEventListener("click", (e) => {
   e.preventDefault();
+  createPrintGroups();
+});
+
+function createPrintGroups() {
   if (simplon.length > 0 && numStudents.value != "") {
     // ----- The hard logic comes here ----------
     finalGroup.innerHTML = "";
@@ -75,12 +83,10 @@ document.querySelector(".makeGroups").addEventListener("click", (e) => {
       "Please specify how many students per group or how many students per group"
     );
   }
-});
-
+}
 // LOAD THE LOCAL STORAGED LIST
 btnLoad.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(simplon);
   if (simplon.length == 0) {
     simplon = savedList.split(",");
     // print each different line
@@ -88,6 +94,7 @@ btnLoad.addEventListener("click", (e) => {
       createDOM(simplon[i], "student", studentList);
     }
   }
+  console.log(simplon);
 });
 
 // ------------------------- Logic -----------------------------
@@ -123,6 +130,13 @@ const makeGroups = (maxNum) => {
 };
 
 //////////// Visual Effects //////////
+let buttons = document.querySelectorAll(".fastGroup");
 
-console.log($(".fastGroup"));
-$(".fastGroup").addEventListener("click", () => {});
+console.log(buttons);
+
+for (const button of buttons) {
+  console.log(button);
+  button.addEventListener("click", (e) => {
+    console.log(e.target.value);
+  });
+}
